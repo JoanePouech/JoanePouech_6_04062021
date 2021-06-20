@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const sauceRoutes = require('./routes/sauces');
+const userRoutes = require('./routes/user');
 
 //Création de l'application Express
 const app = express();
@@ -21,7 +23,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //Configuration des routeurs
-app.use((req, res, next) => {res.json({message: 'Ca fonctionne!!'}), next();});
+app.use('/api/sauces', sauceRoutes);
+app.use('/api/auth', userRoutes);
 
 //Export
 module.exports = app;
