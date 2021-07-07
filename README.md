@@ -6,11 +6,12 @@
 
 2. Dans le dossier frontend, depuis un terminal:
     - Lancer la commande "npm install" pour installer les dépendances (s'il y a un problème avec l'installation de [node-sass](https://www.npmjs.com/package/node-sass): prendre la version correspondante à NodeJS. Pour Node 14.0 par exemple, installer node-sass en version 4.14+.)
+    - Installer Angular avec la commande npm install -g @angular/cli
     - Lancer la commande "ng serve" pour lancer l'application Angular
     - Ouvrir une page du navigateur à l'adresse "localhost:4200" pour accéder à l'application
 
 3. Paramétrer les identifiants MongoDB & la clé d'authentification:
-    - Dupliquer le fichier ".env-prod" et nommer ce nouveau fichier ".env"
+    - Dans le dossier backend, dupliquer le fichier ".env-prod" et nommer ce nouveau fichier ".env"
     - Dans le fichier .env, compléter les identifiants MongoDB (Lien MongoDB: Cluster -> Connect -> Connect your application)
         * DB_USER = le nom d'utilisateur de la base de données
         * DB_PASS = le mot de passe de connexion
