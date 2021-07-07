@@ -2,22 +2,14 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const maskData = require('maskdata');
-
-//Configuration du masquage des emails
-const maskDataOptions = {
-    maskWith: "*", 
-    unmaskedStartCharactersBeforeAt: 2,
-    unmaskedEndCharactersAfterAt: 2,
-    maskAtTheRate: false
-}
+const {base64encode, base64decode} = require('nodejs-base64');
 
 //Requête POST SignUp
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User ({
-                email: maskData.maskEmail2(req.body.email,maskDataOptions),
+                email: base64encode(req.body.email),
                 password: hash
             });
             user.save()
@@ -29,7 +21,7 @@ exports.signup = (req, res, next) => {
 
 //Requête POST Login
 exports.login = (req, res, next) => {
-    User.findOne({email: maskData.maskEmail2(req.body.email,maskDataOptions)})
+    User.findOne({email: base64encode(req.body.email)})
         .then(user => {
             if (!user) {
                 return res.status(401).json({error: "Utilisateur inexistant"})
