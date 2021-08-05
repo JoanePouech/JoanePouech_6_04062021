@@ -1,6 +1,12 @@
-# JoanePouech_6_04062021
+## Projet 6 - Formation Développeur Web - OpenClassrooms
+## Construisez une API sécurisée pour une application d'avis gastronomiques
 
-## Instructions d'installation
+### Contexte du projet
+Réaliser la partie back-end d'un site de publication et notation de sauces.
+Le dossier front-end est fourni.
+Utilisation de Node.js, Express, MongoDB.
+
+### Instructions d'installation
 
 1. Cloner le dossier GitHub localement
 
