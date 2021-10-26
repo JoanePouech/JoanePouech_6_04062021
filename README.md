@@ -1,4 +1,4 @@
-## Projet 6 - Formation Développeur Web - OpenClassrooms
+## Projet 5 - Formation Développeur Web - OpenClassrooms
 ## Construisez une API sécurisée pour une application d'avis gastronomiques
 
 ### Contexte du projet
